@@ -1,7 +1,7 @@
 language: go
 
 go:
-  - 1.8
+  - 1.11
   - tip
 
 install:
@@ -13,7 +13,7 @@ before_script:
   - vim --cmd version --cmd quit
 
 script:
-  - go test -v -race ./...
+  - env GO111MODULE=on go test -v -race ./...
   - goverage -coverprofile=coverage.txt ./...
   - bash go/generate.sh
   - (! git diff | grep '^') # check diff
