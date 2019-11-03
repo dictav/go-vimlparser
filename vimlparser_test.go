@@ -11,7 +11,7 @@ import (
 )
 
 func TestParseFile_can_parse(t *testing.T) {
-	match, err := filepath.Glob("test/test_*.vim")
+	match, err := filepath.Glob("test/test*.vim")
 	if err != nil {
 		t.Fatal(err)
 	}

@@ -3169,7 +3169,7 @@ func (self *StringReader) read_white() string {
 
 func (self *StringReader) read_nonwhite() string {
 	var r = ""
-	for !iswhite(self.peekn(1)) {
+	for !iswhite(self.peekn(1)) && self.peekn(1) != "" {
 		r += self.getn(1)
 	}
 	return r
